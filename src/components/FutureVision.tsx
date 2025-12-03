@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion@10.18.0';
 import { useInView } from 'react-intersection-observer';
 import { User, Stethoscope, Watch, CreditCard, HeartPulse, Globe, Layers, Sparkles } from 'lucide-react';
 

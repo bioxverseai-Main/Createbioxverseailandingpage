@@ -1,149 +1,136 @@
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion@10.18.0';
+import { ArrowRight, Check, Loader2 } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner@2.0.3';
+import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 export function Hero() {
-  return (
-    <section className="pt-40 pb-32 px-8 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-white pointer-events-none"></div>
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast.error("Please enter your email address");
+      return;
+    }
+    
+    setIsLoading(true);
+    try {
+      const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-1e676e04/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${publicAnonKey}`
+        },
+        body: JSON.stringify({ email, source: 'hero' })
+      });
+
+      if (!response.ok) throw new Error('Failed to submit');
       
-      <div className="max-w-7xl mx-auto relative">
-        <div className="max-w-4xl mx-auto text-center">
+      toast.success("You're on the list! We'll be in touch soon.");
+      setEmail("");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <section className="pt-32 pb-24 px-6 relative overflow-hidden bg-gradient-to-b from-[#0066FF] to-[#004bbd] min-h-[90vh] flex items-center">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full mb-10 border border-white/20"
           >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#01C3B3]/10 rounded-full mb-8">
-              <div className="w-2 h-2 bg-[#01C3B3] rounded-full animate-pulse"></div>
-              <span className="text-[#0A1530] text-sm">Building the global health operating system</span>
-            </div>
+            <div className="w-2 h-2 bg-[#00D4AA] rounded-full animate-pulse"></div>
+            <span className="text-white text-sm font-medium">Limited Early Access</span>
           </motion.div>
           
+          {/* Headline */}
           <motion.h1
-            className="text-[#0A1530] mb-8 text-6xl leading-tight"
+            className="text-white mb-6 text-[42px] md:text-[72px] font-bold tracking-tight leading-[1.1] -tracking-[1px]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            The intelligence behind your health
+            What's wrong with me?
           </motion.h1>
           
+          {/* Subheadline */}
           <motion.p
-            className="text-gray-600 text-xl mb-12 leading-relaxed max-w-3xl mx-auto"
+            className="text-white/90 text-[18px] md:text-2xl mb-12 leading-relaxed max-w-[700px] mx-auto font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            BioXverse.ai is the AI-powered platform connecting patients, doctors, and health data into one intelligent ecosystem. From instant symptom analysis to universal health profiles—we're building the operating system for global healthcare.
+            Get instant, accurate answers from medical-grade AI — in 60 seconds.
           </motion.p>
           
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          {/* Email Capture */}
+          <motion.form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6 w-full max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <button className="px-10 py-4 bg-[#0A1530] text-white rounded-lg hover:bg-[#1a2850] transition-all flex items-center justify-center gap-2 group text-lg">
-              Get Early Access
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <input 
+              type="email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email" 
+              className="w-full sm:w-[360px] h-[56px] px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00D4AA] text-[16px] sm:text-[18px] bg-white text-gray-900 placeholder:text-gray-400 disabled:opacity-70"
+              disabled={isLoading}
+            />
+            <button 
+              type="submit"
+              disabled={isLoading}
+              className="w-full sm:w-auto h-[56px] px-6 bg-[#00D4AA] text-white rounded-xl hover:bg-[#00bc98] transition-all font-semibold text-[16px] sm:text-[18px] whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  Joining...
+                </>
+              ) : (
+                <>
+                  Get Early Access
+                  <ArrowRight className="w-5 h-5" />
+                </>
+              )}
             </button>
-            <button className="px-10 py-4 border-2 border-gray-200 text-[#0A1530] rounded-lg hover:border-[#266FFE] hover:text-[#266FFE] transition-all text-lg">
-              View Platform
-            </button>
-          </motion.div>
+          </motion.form>
           
+          {/* Trust Badges */}
           <motion.div
-            className="flex flex-wrap justify-center gap-8 text-sm text-gray-500"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm md:text-base text-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-[#01C3B3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-              <span>HIPAA Compliant</span>
+              <Check className="w-4 h-4" />
+              <span>Free during beta</span>
             </div>
+            <span className="hidden sm:inline text-white/40">•</span>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-[#01C3B3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Medical-Grade AI</span>
+              <Check className="w-4 h-4" />
+              <span>No credit card required</span>
             </div>
+            <span className="hidden sm:inline text-white/40">•</span>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-[#01C3B3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Global Ecosystem</span>
+              <Check className="w-4 h-4" />
+              <span>Join early access</span>
             </div>
           </motion.div>
         </div>
-        
-        {/* Product showcase */}
-        <motion.div
-          className="mt-24 max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
-            <div className="bg-gradient-to-r from-[#0A1530] to-[#266FFE] px-8 py-5 flex items-center justify-between">
-              <span className="text-white text-lg">BioXverse Intelligence Platform</span>
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                <div className="w-3 h-3 rounded-full bg-white/30"></div>
-              </div>
-            </div>
-            
-            <div className="p-8">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100">
-                  <div className="text-[#266FFE] text-3xl mb-2">AI Analysis</div>
-                  <div className="text-[#0A1530] mb-1">Symptom Intelligence</div>
-                  <div className="text-xs text-gray-600">Real-time pattern recognition</div>
-                  <div className="mt-4 h-2 bg-blue-200 rounded-full overflow-hidden">
-                    <motion.div 
-                      className="h-full bg-[#266FFE]"
-                      initial={{ width: 0 }}
-                      animate={{ width: '92%' }}
-                      transition={{ duration: 1.5, delay: 1 }}
-                    ></motion.div>
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 border border-green-100">
-                  <div className="text-[#01C3B3] text-3xl mb-2">Care Nav</div>
-                  <div className="text-[#0A1530] mb-1">Smart Routing</div>
-                  <div className="text-xs text-gray-600">Precision care pathways</div>
-                  <div className="mt-4 h-2 bg-green-200 rounded-full overflow-hidden">
-                    <motion.div 
-                      className="h-full bg-[#01C3B3]"
-                      initial={{ width: 0 }}
-                      animate={{ width: '88%' }}
-                      transition={{ duration: 1.5, delay: 1.2 }}
-                    ></motion.div>
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-purple-100">
-                  <div className="text-purple-600 text-3xl mb-2">Health OS</div>
-                  <div className="text-[#0A1530] mb-1">Universal Profile</div>
-                  <div className="text-xs text-gray-600">Complete health graph</div>
-                  <div className="mt-4 h-2 bg-purple-200 rounded-full overflow-hidden">
-                    <motion.div 
-                      className="h-full bg-purple-600"
-                      initial={{ width: 0 }}
-                      animate={{ width: '95%' }}
-                      transition={{ duration: 1.5, delay: 1.4 }}
-                    ></motion.div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

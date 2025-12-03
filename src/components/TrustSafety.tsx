@@ -1,93 +1,70 @@
-import { motion } from 'motion/react';
-import { useInView } from 'react-intersection-observer';
-import { Shield, Lock, FileCheck, AlertTriangle } from 'lucide-react';
+import { motion } from 'framer-motion@10.18.0';
+import { Shield, Lock, FileText, AlertTriangle } from 'lucide-react';
 
 export function TrustSafety() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const trustPoints = [
-    {
-      icon: Shield,
-      title: "We Guide, Never Diagnose",
-      description: "BioXverse provides intelligent guidance and education—not medical diagnoses. We're the intelligence layer that connects you to the right care, safely."
-    },
-    {
-      icon: Lock,
-      title: "Enterprise-Grade Security",
-      description: "End-to-end encryption, HIPAA compliance, and zero data sharing. Your health information is protected with bank-level security."
-    },
-    {
-      icon: FileCheck,
-      title: "Transparent AI",
-      description: "See exactly how our AI arrives at every conclusion. Full transparency in reasoning, data sources, and confidence levels."
-    },
-    {
-      icon: AlertTriangle,
-      title: "Safety-First Architecture",
-      description: "Red flag detection for emergencies. Our AI is trained to recognize critical situations and direct you to immediate care."
-    }
-  ];
-
   return (
-    <section className="py-32 px-8 bg-gray-50" ref={ref}>
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="max-w-3xl mx-auto text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-[#0A1530] mb-6 text-5xl">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
             Trust & Safety
           </h2>
-          <p className="text-gray-600 text-xl">
-            Built on a foundation of medical ethics, privacy, and security
+          <p className="text-xl text-gray-600">
+            Built on medical ethics, privacy, and security
           </p>
-        </motion.div>
-        
-        <div className="grid md:grid-cols-2 gap-10 mb-16">
-          {trustPoints.map((point, index) => {
-            const Icon = point.icon;
-            return (
-              <motion.div
-                key={index}
-                className="flex gap-6"
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#01C3B3]/10 to-[#266FFE]/10 rounded-xl flex items-center justify-center">
-                    <Icon className="w-7 h-7 text-[#266FFE]" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-[#0A1530] mb-3 text-xl">
-                    {point.title}
-                  </h3>
-                  <p className="text-gray-600 text-lg leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
-        
-        <motion.div
-          className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-gray-200"
+
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-20">
+          {[
+            {
+              icon: <Shield className="w-6 h-6 text-[#0066FF]" />,
+              title: "We Guide, Never Diagnose",
+              desc: "BioXverse provides intelligent guidance and education—not medical diagnoses. We connect you to the right care, safely."
+            },
+            {
+              icon: <Lock className="w-6 h-6 text-[#0066FF]" />,
+              title: "Enterprise-Grade Security",
+              desc: "End-to-end encryption, HIPAA compliance, zero data sharing. Bank-level security."
+            },
+            {
+              icon: <FileText className="w-6 h-6 text-[#0066FF]" />,
+              title: "Transparent AI",
+              desc: "See how our AI arrives at conclusions. Full transparency in reasoning and confidence levels."
+            },
+            {
+              icon: <AlertTriangle className="w-6 h-6 text-[#0066FF]" />,
+              title: "Safety-First Architecture",
+              desc: "Red flag detection for emergencies. AI trained to recognize critical situations."
+            }
+          ].map((item, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-5"
+            >
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
+                {item.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="max-w-3xl mx-auto p-6 border border-gray-200 rounded-xl bg-gray-50 text-sm text-gray-500 text-center leading-relaxed"
         >
-          <div className="text-center">
-            <p className="text-[#0A1530] leading-relaxed">
-              <strong>Medical Disclaimer:</strong> BioXverse.ai is an intelligent health guidance platform and educational tool. It does not provide medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions. Never disregard professional medical advice or delay seeking care because of information from BioXverse.ai. In case of emergency, call 911 or your local emergency services immediately.
-            </p>
-          </div>
+          <p className="font-semibold mb-1">Medical Disclaimer:</p>
+          BioXverse.ai is an intelligent health guidance platform and educational tool. It does not provide medical advice, diagnosis, or treatment. Always consult qualified healthcare professionals for medical decisions. Never disregard professional medical advice or delay seeking care because of information from BioXverse.ai. In case of emergency, call 911 or your local emergency services immediately.
         </motion.div>
       </div>
     </section>
