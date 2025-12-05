@@ -58,7 +58,7 @@ export default function App() {
       <Solution />
       <HowItWorks />
       <WhyBioXverse />
-      <TrustSafety />
+      <TrustSafety onAdminClick={() => setIsAdminOpen(true)} />
       <FoundingTeam />
       <FinalCTA />
       <Footer 

@@ -21,7 +21,7 @@ export function AdminDashboard({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "admin") { // Simple password
+    if (password === "BXVAI@01") {
       setIsAuthenticated(true);
       fetchSignups();
     } else {
@@ -90,7 +90,6 @@ export function AdminDashboard({ isOpen, onClose }: { isOpen: boolean; onClose: 
             <form onSubmit={handleLogin} className="max-w-sm mx-auto flex flex-col gap-4 mt-10">
               <div className="text-center mb-4">
                 <p className="text-gray-600">Enter admin password to view signups.</p>
-                <p className="text-xs text-gray-400 mt-1">(Hint: it's "admin")</p>
               </div>
               <input
                 type="password"

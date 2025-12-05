@@ -47,6 +47,7 @@
           "react-intersection-observer": "*",
           "react-resizable-panels": "^2.1.7",
           "recharts": "^2.15.2",
+          "resend": "*",
           "sonner": "^2.0.3",
           "tailwind-merge": "*",
           "tailwindcss": "*",

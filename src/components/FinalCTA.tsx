@@ -1,12 +1,33 @@
 import { motion } from 'framer-motion@10.18.0';
 import { ArrowRight, Check, Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'sonner@2.0.3';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 export function FinalCTA() {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [signupCount, setSignupCount] = useState(0);
+
+  useEffect(() => {
+    const fetchSignupCount = async () => {
+      try {
+        const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-1e676e04/signups/count`, {
+          headers: {
+            'Authorization': `Bearer ${publicAnonKey}`
+          }
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setSignupCount(data.count || 0);
+        }
+      } catch (error) {
+        console.error('Failed to fetch signup count:', error);
+      }
+    };
+    
+    fetchSignupCount();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +51,7 @@ export function FinalCTA() {
       
       toast.success("You're on the list! We'll be in touch soon.");
       setEmail("");
+      setSignupCount(prev => prev + 1);
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
       console.error(error);
@@ -58,7 +80,7 @@ export function FinalCTA() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-xl md:text-2xl mb-12 opacity-90"
         >
-          Join 500+ people getting early access
+          Join {signupCount} people getting early access
         </motion.p>
 
         <motion.form 

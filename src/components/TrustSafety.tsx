@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion@10.18.0';
 import { Shield, Lock, FileText, AlertTriangle } from 'lucide-react';
 
-export function TrustSafety() {
+export function TrustSafety({ onAdminClick }: { onAdminClick?: () => void }) {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -10,7 +10,11 @@ export function TrustSafety() {
             Trust & Safety
           </h2>
           <p className="text-xl text-gray-600">
-            Built on medical ethics, privacy, and security
+            Built on medical ethics, privacy<span 
+              onClick={onAdminClick}
+              className="cursor-default hover:text-[#0066FF] transition-colors"
+              title="Admin Access"
+            >,</span> and security
           </p>
         </div>
 
