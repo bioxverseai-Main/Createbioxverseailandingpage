@@ -63,7 +63,7 @@ app.post("/make-server-1e676e04/signup", async (c) => {
           subject: "Welcome to BioXverse — You're In! 🎉",
           html: `
             <div style="font-family: sans-serif; font-size: 16px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-              <h1 style="font-size: 24px; font-weight: 700; margin-bottom: 24px; color: #000;">BioXverse</h1>
+              <h1 style="font-size: 24px; font-weight: 700; margin-bottom: 24px; color: #000;">BioXverse.AI</h1>
               
               <p>Hey ${firstName},</p>
               
