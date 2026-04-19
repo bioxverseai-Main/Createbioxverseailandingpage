@@ -48,7 +48,12 @@ app.post("/make-server-1e676e04/signup", async (c) => {
       created_at: new Date().toISOString(),
     };
 
-    await kv.set(key, value);
+    try {
+      await kv.set(key, value);
+    } catch (dbError) {
+      console.error("Database write error during signup:", dbError);
+      // Continue with signup even if DB fails - we'll still send the email
+    }
 
     // Send autoresponder email
     try {
@@ -118,7 +123,8 @@ app.get("/make-server-1e676e04/signups", async (c) => {
     return c.json(sortedSignups);
   } catch (error) {
     console.error("Fetch signups error:", error);
-    return c.json({ error: "Internal server error" }, 500);
+    // Return empty array on error to prevent frontend crashes
+    return c.json([]);
   }
 });
 
@@ -130,7 +136,8 @@ app.get("/make-server-1e676e04/signups/count", async (c) => {
     return c.json({ count });
   } catch (error) {
     console.error("Fetch signup count error:", error);
-    return c.json({ error: "Internal server error" }, 500);
+    // Return 0 count on error to prevent frontend crashes
+    return c.json({ count: 0 });
   }
 });
 

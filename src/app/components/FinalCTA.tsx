@@ -70,7 +70,7 @@ export function FinalCTA() {
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-6xl font-bold mb-6"
         >
-          Be first to experience BioXverse
+          Stop Managing Your Health.
         </motion.h2>
         
         <motion.p 
@@ -80,7 +80,7 @@ export function FinalCTA() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-xl md:text-2xl mb-12 opacity-90"
         >
-          Join {signupCount} people getting early access
+          Let BioXverse do it for you. Join {signupCount} early adopters.
         </motion.p>
 
         <motion.form 
@@ -111,7 +111,7 @@ export function FinalCTA() {
               </>
             ) : (
               <>
-                Get Early Access
+                Join Waitlist
                 <ArrowRight className="w-5 h-5" />
               </>
             )}

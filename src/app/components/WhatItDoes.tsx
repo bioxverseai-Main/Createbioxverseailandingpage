@@ -4,23 +4,23 @@ export function WhatItDoes() {
   const features = [
     {
       icon: Brain,
-      title: "AI Symptom Analysis",
-      description: "Describe your symptoms in plain language. Our medical-grade AI evaluates patterns and identifies likely causes instantly."
+      title: "Autonomous Booking",
+      description: "It calls the clinic, finds the slot, and adds it to your calendar. No hold music required."
     },
     {
       icon: Activity,
-      title: "Severity Scoring",
-      description: "Get clear severity ratings and urgency levels so you know whether to rest, see a doctor, or seek immediate care."
+      title: "Instant Refills",
+      description: "Tracks your supply and reorders automatically. Meds arrive at your door before you run out."
     },
     {
       icon: Navigation2,
-      title: "Smart Care Navigation",
-      description: "Receive personalized guidance on the right type of care—from self-care to specialist visits—saving you time and money."
+      title: "Universal Records",
+      description: "Every lab result, scan, and prescription in one timeline. You own your data, finally."
     },
     {
       icon: Shield,
-      title: "Safe & Private",
-      description: "Your health data is encrypted and protected. We never diagnose—we guide you to make informed decisions safely."
+      title: "Proactive Shield",
+      description: "AI that monitors your trends 24/7 and flags risks before they become emergencies."
     }
   ];
 
@@ -29,10 +29,10 @@ export function WhatItDoes() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 className="text-[#0A1530] mb-4">
-            What BioXverse.ai Does
+            A Complete Health OS
           </h2>
           <p className="text-gray-600 text-lg">
-            An AI-powered health assistant that transforms confusing symptoms into clear, actionable guidance—instantly and safely.
+            The first operating system designed to manage the business of being a patient.
           </p>
         </div>
         
