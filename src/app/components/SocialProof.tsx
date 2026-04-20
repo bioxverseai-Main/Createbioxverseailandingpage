@@ -60,9 +60,9 @@ export function SocialProof() {
           transition={{ duration: 0.8 }}
           className="text-center mb-32"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-full mb-8">
-            <Users className="w-5 h-5 text-[#00E5CC]" />
-            <span className="text-[#00E5CC] font-medium">Join the movement</span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-500/10 border border-blue-500/20 rounded-full mb-8">
+            <Users className="w-5 h-5 text-blue-400" />
+            <span className="text-blue-400 font-medium">Join the movement</span>
           </div>
           
           <div className="mb-6">
@@ -79,9 +79,6 @@ export function SocialProof() {
           
           <p className="text-xl sm:text-2xl text-gray-400">
             people already on the waitlist
-          </p>
-          <p className="text-sm text-gray-600 mt-3">
-            <span className="text-[#00E5CC]">127</span> joined in the last 24 hours
           </p>
         </motion.div>
 
@@ -105,13 +102,13 @@ export function SocialProof() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 hover:border-[#00E5CC]/30 transition-all"
+                className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 hover:border-blue-500/30 transition-all"
               >
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#00E5CC] to-[#00FFD1] rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
                     {testimonial.avatar}
                   </div>
                   <div>

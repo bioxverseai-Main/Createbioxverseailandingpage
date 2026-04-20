@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-/* Premium Medical Precision aesthetic */
+/* Premium Lotus-inspired aesthetic */
 :root {
   --bg-dark: #000000;
   --bg-subtle: #0A0A0A;
-  --accent: #00E5CC;
-  --accent-dark: #00B8A3;
-  --accent-muted: rgba(0, 229, 204, 0.1);
-  --accent-glow: rgba(0, 229, 204, 0.15);
+  --accent: #3B82F6;
+  --accent-muted: rgba(59, 130, 246, 0.1);
   --text-primary: #FFFFFF;
   --text-secondary: #A1A1AA;
   --text-muted: #52525B;
@@ -121,7 +119,7 @@ html {
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #00E5CC 0%, #00FFD1 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

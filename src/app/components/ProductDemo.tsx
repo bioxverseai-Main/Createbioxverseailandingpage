@@ -65,7 +65,7 @@ export function ProductDemo() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex px-4 py-2 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-full text-sm text-[#00E5CC] font-medium mb-8">
+          <div className="inline-flex px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-400 font-medium mb-8">
             See it in action
           </div>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-white mb-6">
@@ -93,7 +93,7 @@ export function ProductDemo() {
               <div className="bg-black rounded-[2.5rem] overflow-hidden border border-white/10">
                 {/* Header */}
                 <div className="bg-gradient-to-b from-gray-900 to-black border-b border-white/10 px-6 py-4 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#00E5CC] rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                     <Bot className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -120,7 +120,7 @@ export function ProductDemo() {
                           <div
                             className={`px-5 py-4 rounded-3xl ${
                               step.type === 'user'
-                                ? 'bg-[#00E5CC] text-white'
+                                ? 'bg-blue-500 text-white'
                                 : 'bg-white/10 text-gray-200 border border-white/10'
                             }`}
                           >
@@ -181,8 +181,8 @@ export function ProductDemo() {
                       disabled
                       className="flex-1 bg-transparent text-gray-400 placeholder:text-gray-600 outline-none text-sm"
                     />
-                    <div className="w-8 h-8 bg-[#00E5CC]/20 rounded-full flex items-center justify-center">
-                      <Send className="w-4 h-4 text-[#00E5CC]" />
+                    <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                      <Send className="w-4 h-4 text-blue-400" />
                     </div>
                   </div>
                 </div>

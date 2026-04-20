@@ -16,7 +16,7 @@ export function Founder() {
             <div className="flex flex-col md:flex-row gap-8 items-start">
               {/* Photo */}
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 bg-gradient-to-br from-[#00E5CC] to-purple-500 rounded-2xl flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
                   <span className="text-5xl font-semibold text-white">B</span>
                 </div>
               </div>

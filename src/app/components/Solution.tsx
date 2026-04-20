@@ -5,7 +5,7 @@ export function Solution() {
     <section className="py-40 px-6 bg-gradient-to-b from-black via-blue-950/5 to-black relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[600px] h-[600px] bg-[#00E5CC]/5 rounded-full blur-3xl" />
+        <div className="w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -16,7 +16,7 @@ export function Solution() {
           transition={{ duration: 0.8 }}
           className="space-y-12"
         >
-          <div className="inline-flex px-4 py-2 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-full text-sm text-[#00E5CC] font-medium mb-8">
+          <div className="inline-flex px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-400 font-medium mb-8">
             Introducing BioXverse
           </div>
 
@@ -48,7 +48,7 @@ export function Solution() {
           >
             You make one request. The system executes your entire healthcare journey.
             <br />
-            <span className="text-[#00E5CC]">Just like it should have worked all along.</span>
+            <span className="text-blue-400">Just like it should have worked all along.</span>
           </motion.p>
 
           {/* Feature highlights */}

@@ -23,7 +23,7 @@ export function Waitlist() {
     <section id="waitlist" className="py-40 px-6 bg-black relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[800px] h-[800px] bg-[#00E5CC]/10 rounded-full blur-3xl" />
+        <div className="w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -35,7 +35,7 @@ export function Waitlist() {
           className="space-y-12"
         >
           <div className="space-y-6">
-            <div className="inline-flex px-4 py-2 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-full text-sm text-[#00E5CC] font-medium">
+            <div className="inline-flex px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-400 font-medium">
               Limited Early Access
             </div>
 
@@ -70,7 +70,7 @@ export function Waitlist() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:border-[#00E5CC]/50 focus:bg-white/10 transition-all text-lg"
+                className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all text-lg"
               />
               <input
                 type="email"
@@ -78,7 +78,7 @@ export function Waitlist() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:border-[#00E5CC]/50 focus:bg-white/10 transition-all text-lg"
+                className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all text-lg"
               />
 
               {/* Trust badges near input */}
@@ -106,7 +106,7 @@ export function Waitlist() {
                   onClick={() => setRole('patient')}
                   className={`px-6 py-4 rounded-2xl border transition-all ${
                     role === 'patient'
-                      ? 'bg-[#00E5CC]/20 border-[#00E5CC]/50 text-white'
+                      ? 'bg-blue-500/20 border-blue-500/50 text-white'
                       : 'bg-white/5 border-white/10 text-gray-400 hover:border-white/20'
                   }`}
                 >
@@ -117,7 +117,7 @@ export function Waitlist() {
                   onClick={() => setRole('provider')}
                   className={`px-6 py-4 rounded-2xl border transition-all ${
                     role === 'provider'
-                      ? 'bg-[#00E5CC]/20 border-[#00E5CC]/50 text-white'
+                      ? 'bg-blue-500/20 border-blue-500/50 text-white'
                       : 'bg-white/5 border-white/10 text-gray-400 hover:border-white/20'
                   }`}
                 >
@@ -127,17 +127,14 @@ export function Waitlist() {
 
               <motion.button
                 type="submit"
-                className="w-full px-8 py-5 bg-[#00E5CC] text-black rounded-2xl text-lg font-medium hover:bg-[#00FFD1] transition-all shadow-2xl shadow-[#00E5CC]/30"
-                whileHover={{ scale: 1.02, boxShadow: '0 25px 50px -12px rgba(0, 229, 204, 0.5)' }}
+                className="w-full px-8 py-5 bg-white text-black rounded-2xl text-lg font-medium hover:bg-white/90 transition-all shadow-2xl shadow-white/10"
+                whileHover={{ scale: 1.02, boxShadow: '0 25px 50px -12px rgba(255, 255, 255, 0.25)' }}
                 whileTap={{ scale: 0.98 }}
               >
                 Join the Waitlist
               </motion.button>
 
               <p className="text-sm text-gray-600 pt-4">
-                No credit card • Cancel anytime • HIPAA secure
-              </p>
-              <p className="text-xs text-gray-700 pt-2">
                 We're onboarding users in batches. Early access starts in Q2 2026.
               </p>
             </motion.form>
@@ -145,11 +142,11 @@ export function Waitlist() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="max-w-xl mx-auto p-12 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-3xl"
+              className="max-w-xl mx-auto p-12 bg-blue-500/10 border border-blue-500/20 rounded-3xl"
             >
               <div className="flex items-center justify-center mb-4">
-                <div className="p-4 bg-[#00E5CC]/20 rounded-full">
-                  <Check className="w-8 h-8 text-[#00E5CC]" />
+                <div className="p-4 bg-blue-500/20 rounded-full">
+                  <Check className="w-8 h-8 text-blue-400" />
                 </div>
               </div>
               <div className="text-3xl font-semibold text-white mb-3">
@@ -169,14 +166,14 @@ export function Waitlist() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="mailto:partnerships@bioxverse.ai"
-                className="text-white hover:text-[#00E5CC] transition-colors underline text-lg"
+                className="text-white hover:text-blue-400 transition-colors underline text-lg"
               >
                 partnerships@bioxverse.ai
               </a>
               <span className="text-gray-700 hidden sm:block">•</span>
               <a
                 href="mailto:hello@bioxverse.ai"
-                className="text-white hover:text-[#00E5CC] transition-colors underline text-lg"
+                className="text-white hover:text-blue-400 transition-colors underline text-lg"
               >
                 hello@bioxverse.ai
               </a>

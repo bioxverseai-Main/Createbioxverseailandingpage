@@ -10,7 +10,7 @@ const useCases = [
     story: "Dad was discharged from the hospital on a Friday afternoon with a stack of papers: 4 prescriptions to fill, 3 specialist follow-ups to schedule, wound care instructions, and a prior authorization for home health that needed to be submitted by Monday.",
     traditionalOutcome: "47 minutes on hold with the cardiologist's office. Insurance portal crashed twice. Pharmacy said one prescription needed clarification from the doctor. By Sunday night, only 1 appointment was booked, and the prior auth still wasn't submitted.",
     bioxverseOutcome: "Sarah messaged BioXverse from the hospital parking lot. By the time she got her father home, all 3 appointments were confirmed, prescriptions were ready for pickup, and the prior authorization was submitted. Total time spent: one 90-second message.",
-    gradient: "from-[#00E5CC] to-cyan-500"
+    gradient: "from-blue-500 to-cyan-500"
   },
   {
     icon: Heart,
@@ -71,7 +71,7 @@ export function UseCases() {
 
                 {/* Challenge */}
                 <div className="mb-8">
-                  <div className="text-sm text-[#00E5CC] font-semibold uppercase tracking-wider mb-3">
+                  <div className="text-sm text-blue-400 font-semibold uppercase tracking-wider mb-3">
                     {useCase.challenge}
                   </div>
                   <p className="text-lg text-gray-300 leading-relaxed">

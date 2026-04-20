@@ -71,11 +71,11 @@ export function HowItWorks() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 {/* Left: Number and Icon */}
                 <div className="lg:col-span-2 flex lg:flex-col items-start gap-6">
-                  <div className="text-6xl font-semibold text-gray-800 group-hover:text-[#00E5CC]/30 transition-colors">
+                  <div className="text-6xl font-semibold text-gray-800 group-hover:text-blue-500/30 transition-colors">
                     {step.number}
                   </div>
-                  <div className="p-4 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-2xl">
-                    <step.icon className="w-6 h-6 text-[#00E5CC]" />
+                  <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-2xl">
+                    <step.icon className="w-6 h-6 text-blue-400" />
                   </div>
                 </div>
 
@@ -102,7 +102,7 @@ export function HowItWorks() {
 
               {/* Connection line */}
               {index < steps.length - 1 && (
-                <div className="absolute left-[3rem] top-[8rem] lg:top-[12rem] w-px h-24 bg-gradient-to-b from-[#00E5CC]/20 to-transparent hidden lg:block" />
+                <div className="absolute left-[3rem] top-[8rem] lg:top-[12rem] w-px h-24 bg-gradient-to-b from-blue-500/20 to-transparent hidden lg:block" />
               )}
             </motion.div>
           ))}

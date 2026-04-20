@@ -62,14 +62,14 @@ export function FAQ() {
                 className="w-full text-left p-6 sm:p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all group"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white group-hover:text-[#00E5CC] transition-colors pr-4">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white group-hover:text-blue-400 transition-colors pr-4">
                     {faq.question}
                   </h3>
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#00E5CC]/10 border border-[#00E5CC]/20 flex items-center justify-center group-hover:bg-[#00E5CC]/20 transition-colors">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
                     {openIndex === index ? (
-                      <Minus className="w-5 h-5 text-[#00E5CC]" />
+                      <Minus className="w-5 h-5 text-blue-400" />
                     ) : (
-                      <Plus className="w-5 h-5 text-[#00E5CC]" />
+                      <Plus className="w-5 h-5 text-blue-400" />
                     )}
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export function FAQ() {
             Have more questions?{' '}
             <a
               href="mailto:hello@bioxverse.ai"
-              className="text-[#00E5CC] hover:text-blue-300 transition-colors underline"
+              className="text-blue-400 hover:text-blue-300 transition-colors underline"
             >
               Get in touch
             </a>

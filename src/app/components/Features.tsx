@@ -66,13 +66,13 @@ export function Features() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 hover:border-[#00E5CC]/30 transition-all duration-300 cursor-default"
+              className="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300 cursor-default"
             >
-              <div className="mb-6 p-3 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-2xl w-fit group-hover:bg-[#00E5CC]/20 transition-colors">
-                <feature.icon className="w-6 h-6 text-[#00E5CC]" />
+              <div className="mb-6 p-3 bg-blue-500/10 border border-blue-500/20 rounded-2xl w-fit group-hover:bg-blue-500/20 transition-colors">
+                <feature.icon className="w-6 h-6 text-blue-400" />
               </div>
               
-              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 group-hover:text-[#00E5CC] transition-colors">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
                 {feature.title}
               </h3>
               
@@ -96,7 +96,7 @@ export function Features() {
           </p>
           <motion.button
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-4 bg-[#00E5CC] text-white rounded-full text-base font-medium hover:bg-[#00B8A3] transition-all"
+            className="px-8 py-4 bg-blue-500 text-white rounded-full text-base font-medium hover:bg-blue-600 transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

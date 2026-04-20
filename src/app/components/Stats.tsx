@@ -28,7 +28,7 @@ export function Stats() {
     <section className="py-40 px-6 bg-gradient-to-b from-black via-blue-950/5 to-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 flex items-center justify-center opacity-30">
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#00E5CC]/20 to-transparent" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -58,7 +58,7 @@ export function Stats() {
               className="text-center group"
             >
               <motion.div 
-                className="text-6xl sm:text-7xl font-semibold mb-4 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent group-hover:from-[#00E5CC] group-hover:to-[#00B8A3] transition-all duration-500"
+                className="text-6xl sm:text-7xl font-semibold mb-4 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-blue-600 transition-all duration-500"
                 whileHover={{ scale: 1.05 }}
               >
                 {stat.value}

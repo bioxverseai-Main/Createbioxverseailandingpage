@@ -15,13 +15,11 @@ import { Founder } from './components/Founder';
 import { IntegrationNote } from './components/IntegrationNote';
 import { Waitlist } from './components/Waitlist';
 import { Footer } from './components/Footer';
-import { StickyCTA } from './components/StickyCTA';
 
 export default function App() {
   return (
     <div className="bg-black min-h-screen antialiased">
       <Navigation />
-      <StickyCTA />
       <main>
         <Hero />
         <SocialProof />

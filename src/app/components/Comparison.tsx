@@ -108,7 +108,7 @@ export function Comparison() {
 
                 {/* BioXverse */}
                 <div className="flex items-center justify-center">
-                  <span className="text-base sm:text-lg font-semibold text-[#00E5CC] text-center">
+                  <span className="text-base sm:text-lg font-semibold text-blue-400 text-center">
                     {row.bioxverse}
                   </span>
                 </div>
@@ -117,13 +117,13 @@ export function Comparison() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="p-6 sm:p-8 bg-gradient-to-t from-[#00E5CC]/5 to-transparent border-t border-[#00E5CC]/20 text-center">
+          <div className="p-6 sm:p-8 bg-gradient-to-t from-blue-500/5 to-transparent border-t border-blue-500/20 text-center">
             <p className="text-gray-400 mb-4">
               Stop wasting time on healthcare logistics
             </p>
             <motion.button
               onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-[#00E5CC] text-white rounded-full text-base font-medium hover:bg-[#00B8A3] transition-all shadow-xl shadow-[#00E5CC]/20"
+              className="px-8 py-4 bg-blue-500 text-white rounded-full text-base font-medium hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

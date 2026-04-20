@@ -29,9 +29,9 @@ export function ThreeStepFlow() {
       <div className="absolute inset-0 flex items-center justify-center opacity-20">
         <div className="w-full max-w-6xl">
           <div className="flex items-center justify-between">
-            <div className="w-32 h-px bg-gradient-to-r from-transparent to-[#00E5CC]/50" />
-            <div className="w-32 h-px bg-[#00E5CC]/50" />
-            <div className="w-32 h-px bg-gradient-to-l from-transparent to-[#00E5CC]/50" />
+            <div className="w-32 h-px bg-gradient-to-r from-transparent to-blue-500/50" />
+            <div className="w-32 h-px bg-blue-500/50" />
+            <div className="w-32 h-px bg-gradient-to-l from-transparent to-blue-500/50" />
           </div>
         </div>
       </div>
@@ -70,8 +70,8 @@ export function ThreeStepFlow() {
               </div>
 
               {/* Icon */}
-              <div className="mb-6 p-4 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-2xl w-fit">
-                <step.icon className="w-8 h-8 text-[#00E5CC]" />
+              <div className="mb-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-2xl w-fit">
+                <step.icon className="w-8 h-8 text-blue-400" />
               </div>
 
               {/* Content */}
@@ -101,7 +101,7 @@ export function ThreeStepFlow() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                    className="text-[#00E5CC]/30 text-4xl"
+                    className="text-blue-500/30 text-4xl"
                   >
                     →
                   </motion.div>

@@ -17,9 +17,9 @@ export function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 bg-black relative overflow-hidden">
-      {/* Subtle teal gradient orb */}
+      {/* Subtle gradient orb */}
       <motion.div
-        className="absolute top-1/2 left-1/2 w-[800px] h-[800px] rounded-full bg-[#00E5CC]/8 blur-3xl pointer-events-none"
+        className="absolute top-1/2 left-1/2 w-[800px] h-[800px] rounded-full bg-blue-500/5 blur-3xl pointer-events-none"
         animate={{
           x: mousePosition.x,
           y: mousePosition.y,
@@ -44,7 +44,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="inline-flex"
           >
-            <div className="px-4 py-2 bg-[#00E5CC]/10 border border-[#00E5CC]/20 rounded-full text-sm text-[#00E5CC] font-medium">
+            <div className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-400 font-medium">
               The First Self-Driving Health OS
             </div>
           </motion.div>
@@ -54,11 +54,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.19, 1, 0.22, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-semibold tracking-tight leading-[0.9] text-white"
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-semibold tracking-tight leading-[0.9] text-white"
           >
-            Healthcare.
+            Your health.
             <br />
-            <span className="gradient-accent">Without the hassle.</span>
+            <span className="gradient-accent">Handled.</span>
           </motion.h1>
           
           <motion.p
@@ -83,8 +83,8 @@ export function Hero() {
           >
             <motion.button
               onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-10 py-5 bg-[#00E5CC] text-black rounded-full text-lg font-medium hover:bg-[#00FFD1] transition-all shadow-2xl shadow-[#00E5CC]/30"
-              whileHover={{ scale: 1.05, boxShadow: '0 25px 50px -12px rgba(0, 229, 204, 0.5)' }}
+              className="px-10 py-5 bg-white text-black rounded-full text-lg font-medium hover:bg-white/90 transition-all shadow-2xl shadow-white/10"
+              whileHover={{ scale: 1.05, boxShadow: '0 25px 50px -12px rgba(255, 255, 255, 0.25)' }}
               whileTap={{ scale: 0.95 }}
             >
               Join the Waitlist

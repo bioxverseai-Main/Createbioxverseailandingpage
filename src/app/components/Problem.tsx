@@ -72,7 +72,7 @@ export function Problem() {
               <div className="flex flex-col lg:flex-row lg:items-start gap-8">
                 {/* Stat */}
                 <div className="flex-shrink-0">
-                  <div className="text-5xl sm:text-6xl font-semibold text-[#00E5CC]/20 group-hover:text-[#00E5CC]/40 transition-colors">
+                  <div className="text-5xl sm:text-6xl font-semibold text-blue-500/20 group-hover:text-blue-500/40 transition-colors">
                     {problem.stat}
                   </div>
                   <div className="text-sm text-gray-600 mt-1">
@@ -87,7 +87,7 @@ export function Problem() {
               </div>
 
               {/* Subtle line */}
-              <div className="absolute -left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#00E5CC]/20 to-transparent hidden lg:block" />
+              <div className="absolute -left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-500/20 to-transparent hidden lg:block" />
             </motion.div>
           ))}
         </div>
