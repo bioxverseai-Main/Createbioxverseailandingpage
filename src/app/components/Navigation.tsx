@@ -33,6 +33,12 @@ export function Navigation() {
         </motion.div>
         
         <div className="flex items-center gap-6">
+          <a
+            href="/hospitals"
+            className="text-sm text-gray-400 hover:text-white transition-colors hidden md:block"
+          >
+            For Hospitals
+          </a>
           <button
             onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-sm text-gray-400 hover:text-white transition-colors hidden sm:block"
@@ -41,8 +47,8 @@ export function Navigation() {
           </button>
           <motion.button
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-2.5 bg-white text-black rounded-full text-sm font-medium hover:bg-white/90 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
+            className="px-6 py-2.5 bg-[#00E5CC] text-black rounded-full text-sm font-medium hover:bg-[#00FFD1] transition-all duration-300 shadow-lg shadow-[#00E5CC]/20"
+            whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(0, 229, 204, 0.4)' }}
             whileTap={{ scale: 0.95 }}
           >
             Get Early Access
