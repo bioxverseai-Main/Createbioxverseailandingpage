@@ -1,43 +1,47 @@
-import { Navigation } from './components/Navigation';
-import { Hero } from './components/Hero';
-import { Problem } from './components/Problem';
-import { Solution } from './components/Solution';
-import { ThreeStepFlow } from './components/ThreeStepFlow';
-import { HowItWorks } from './components/HowItWorks';
-import { ProductDemo } from './components/ProductDemo';
-import { UseCases } from './components/UseCases';
-import { Comparison } from './components/Comparison';
-import { Features } from './components/Features';
-import { Stats } from './components/Stats';
-import { SocialProof } from './components/SocialProof';
-import { FAQ } from './components/FAQ';
-import { Founder } from './components/Founder';
-import { IntegrationNote } from './components/IntegrationNote';
-import { Waitlist } from './components/Waitlist';
-import { Footer } from './components/Footer';
+import { motion } from 'motion/react';
+import { EnergyHero } from './components/energy/EnergyHero';
+import { ProblemDynamic } from './components/energy/ProblemDynamic';
+import { VisionParallax } from './components/energy/VisionParallax';
+import { RoadmapTimeline } from './components/energy/RoadmapTimeline';
+import { CapabilitiesInteractive } from './components/energy/CapabilitiesInteractive';
+import { WaitlistDynamic } from './components/energy/WaitlistDynamic';
+import { FooterBold } from './components/energy/FooterBold';
 
-export default function App() {
+export default function Consumer() {
   return (
     <div className="bg-black min-h-screen antialiased">
-      <Navigation />
+      {/* Top nav with glassmorphism */}
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="fixed top-0 left-0 right-0 z-50 px-6 py-6 backdrop-blur-lg bg-black/50 border-b border-white/10"
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <a
+            href="/"
+            className="text-xl font-bold bg-gradient-to-r from-[#00E5CC] to-[#8B5CF6] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+          >
+            BioXverse
+          </a>
+          <a
+            href="/hospitals"
+            className="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/5"
+          >
+            For Hospitals
+          </a>
+        </div>
+      </motion.div>
+
       <main>
-        <Hero />
-        <SocialProof />
-        <Problem />
-        <Solution />
-        <ThreeStepFlow />
-        <ProductDemo />
-        <UseCases />
-        <Comparison />
-        <HowItWorks />
-        <Features />
-        <IntegrationNote />
-        <Stats />
-        <FAQ />
-        <Founder />
-        <Waitlist />
+        <EnergyHero />
+        <ProblemDynamic />
+        <VisionParallax />
+        <RoadmapTimeline />
+        <CapabilitiesInteractive />
+        <WaitlistDynamic />
       </main>
-      <Footer />
+      <FooterBold />
     </div>
   );
 }
